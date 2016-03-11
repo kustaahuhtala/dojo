@@ -21,14 +21,12 @@ public class AppTest {
 
     @Test
     public void addPoint() {
-        Game game = new Game();
         game.addPoint("player1");
         assertEquals("fifteen - love", game.getPoints());
     }
 
     @Test
     public void addPointToPlayer2() {
-        Game game = new Game();
         game.addPoint("player2");
         assertEquals("love - fifteen", game.getPoints());
     }
