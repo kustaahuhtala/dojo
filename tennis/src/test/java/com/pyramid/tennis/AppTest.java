@@ -10,4 +10,9 @@ public class AppTest {
 	public void testApp() {
 		assertNotNull(new AppTest());
 	}
+	
+	@Test
+	public void testInitGame() {
+		assertEquals("love - love", new App().init());
+	}
 }
