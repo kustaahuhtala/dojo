@@ -72,16 +72,14 @@ public class AppTest {
         game.addPoint("player2");
         assertEquals("advantage player2", game.getPoints());
     }
-    
-    
+
+
     @Test
     public void win() {
-    	 game.addPoint("player2");
-         game.addPoint("player1");
-         game.addPoint("player2");
-         game.addPoint("player1");
-         game.addPoint("player2");
-         game.addPoint("player1");
-         game.addPoint("player1");
+        game.addPoint("player2");
+        game.addPoint("player2");
+        game.addPoint("player2");
+        game.addPoint("player2");
+        assertEquals("winner player2", game.getPoints());
     }
 }
