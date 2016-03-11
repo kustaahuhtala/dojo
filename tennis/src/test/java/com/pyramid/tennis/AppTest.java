@@ -39,4 +39,10 @@ public class AppTest {
         game.addPoint("player2");
         assertEquals("love - thirty", game.getPoints());
     }
+
+    @Test
+    public void registerPlayer() {
+        game.registerPlayer("player1");
+        assertEquals(1, game.getPlayers());
+    }
 }
