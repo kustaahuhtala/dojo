@@ -7,51 +7,51 @@ import org.junit.Test;
 
 public class AppTest {
 
-	Game game;
+    Game game;
 
-	@Before
-	public void init() {
-		game = new Game();
-	}
+    @Before
+    public void init() {
+        game = new Game();
+    }
 
-	@Test
-	public void initGame() {
-		assertEquals("love - love", new Game().getPoints());
-	}
+    @Test
+    public void initGame() {
+        assertEquals("love - love", new Game().getPoints());
+    }
 
-	@Test
-	public void addPoint() {
-		Game game = new Game();
-		game.addPoint("player1");
-		assertEquals("fifteen - love", game.getPoints());
-	}
+    @Test
+    public void addPoint() {
+        Game game = new Game();
+        game.addPoint("player1");
+        assertEquals("fifteen - love", game.getPoints());
+    }
 
-	@Test
-	public void addPointToPlayer2() {
-		Game game = new Game();
-		game.addPoint("player2");
-		assertEquals("love - fifteen", game.getPoints());
-	}
+    @Test
+    public void addPointToPlayer2() {
+        Game game = new Game();
+        game.addPoint("player2");
+        assertEquals("love - fifteen", game.getPoints());
+    }
 
-	@Test
-	public void addSecondPointToPlayer2() {
-		game.addPoint("player2");
-		game.addPoint("player2");
-		assertEquals("love - thirty", game.getPoints());
-	}
+    @Test
+    public void addSecondPointToPlayer2() {
+        game.addPoint("player2");
+        game.addPoint("player2");
+        assertEquals("love - thirty", game.getPoints());
+    }
 
-	@Test
-	public void addSecondPointToPlayers() {
-		game.addPoint("player2");
-		game.addPoint("player1");
-		assertEquals("fifteen - fifteen", game.getPoints());
-		game.addPoint("player2");
-		game.addPoint("player1");
-		assertEquals("thirty - thirty", game.getPoints());
-		game.addPoint("player1");
-		assertEquals("forty - thirty", game.getPoints());
-		game.addPoint("player2");
-		assertEquals("deuce", game.getPoints());
-	}
+    @Test
+    public void addPointsToPlayers() {
+        game.addPoint("player2");
+        game.addPoint("player1");
+        assertEquals("fifteen - fifteen", game.getPoints());
+        game.addPoint("player2");
+        game.addPoint("player1");
+        assertEquals("thirty - thirty (deuce)", game.getPoints());
+        game.addPoint("player1");
+        assertEquals("forty - thirty", game.getPoints());
+        game.addPoint("player2");
+        assertEquals("forty - forty (deuce)", game.getPoints());
+    }
 
 }
