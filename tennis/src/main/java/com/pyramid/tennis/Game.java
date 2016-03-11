@@ -26,8 +26,14 @@ public class Game {
 
     public String getPoints() {
         String score = map.get(scores.get(PLAYER1)) + " - " + map.get(scores.get(PLAYER2));
-        if (scores.get(PLAYER1).equals(scores.get(PLAYER2)) && scores.get(PLAYER1) > 3) {
-            return score + " (deuce)";
+        if (scores.get(PLAYER1).equals(scores.get(PLAYER2)) && scores.get(PLAYER1) >= 2) {
+            return "deuce";
+        }
+        else if (scores.get(PLAYER1) > 3 && scores.get(PLAYER1) > scores.get(PLAYER2)) {
+        	return "advantage " + PLAYER1;
+        }
+        else if (scores.get(PLAYER2) > 3 && scores.get(PLAYER2) > scores.get(PLAYER1)) {
+        	return "advantage " + PLAYER2;
         }
         return score;
     }

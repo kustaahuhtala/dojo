@@ -47,11 +47,41 @@ public class AppTest {
         assertEquals("fifteen - fifteen", game.getPoints());
         game.addPoint("player2");
         game.addPoint("player1");
-        assertEquals("thirty - thirty (deuce)", game.getPoints());
+        assertEquals("deuce", game.getPoints());
         game.addPoint("player1");
         assertEquals("forty - thirty", game.getPoints());
         game.addPoint("player2");
-        assertEquals("forty - forty (deuce)", game.getPoints());
+        assertEquals("deuce", game.getPoints());
     }
 
+    @Test
+    public void advantage() {
+        game.addPoint("player2");
+        game.addPoint("player1");
+        game.addPoint("player2");
+        game.addPoint("player1");
+        game.addPoint("player2");
+        game.addPoint("player1");
+        game.addPoint("player1");
+
+        assertEquals("advantage player1", game.getPoints());
+
+        game.addPoint("player2");
+        assertEquals("deuce", game.getPoints());
+        game.addPoint("player2");
+        game.addPoint("player2");
+        assertEquals("advantage player2", game.getPoints());
+    }
+    
+    
+    @Test
+    public void win() {
+    	 game.addPoint("player2");
+         game.addPoint("player1");
+         game.addPoint("player2");
+         game.addPoint("player1");
+         game.addPoint("player2");
+         game.addPoint("player1");
+         game.addPoint("player1");
+    }
 }
