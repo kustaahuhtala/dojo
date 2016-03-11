@@ -1,3 +1,3 @@
 # dojo
 
-This is a simple project for simple dojo.
+This is a simple project for a simple dojo.
