@@ -2,20 +2,39 @@ package com.pyramid.tennis;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class AppTest {
 
-    @Test
-    public void initGame() {
-        assertEquals("love - love", new App().init());
-    }
+	Game game;
+	
+	@Before
+	public void init() {
+		game = new Game();
+	}
+	
+	@Test
+	public void initGame() {
+		assertEquals("love - love", new Game().getPoints());
+	}
 
-    @Test
-    public void addPoint() {
-        App app = new App();
-        app.addPoint(1);
+	@Test
+	public void addPoint() {
+		Game game = new Game();
+		game.addPoint("player1");
+		assertEquals("fifteen - love", game.getPoints());
+	}
 
-        assertEquals(1, app.getPoints());
-    }
+	@Test
+	public void addPointToPlayer2() {
+		Game game = new Game();
+		game.addPoint("player2");
+		assertEquals("love - fifteen", game.getPoints());
+	}
+	
+	@Test
+	public void addSecondPointToPlayer2() {
+		game.addpoi
+	}
 }
